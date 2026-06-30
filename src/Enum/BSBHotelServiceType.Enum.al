@@ -1,4 +1,4 @@
-enum 50102 "Hotel Service Type"
+enum 50101 "BSB Hotel Service Type"
 {
     Extensible = true;
 
