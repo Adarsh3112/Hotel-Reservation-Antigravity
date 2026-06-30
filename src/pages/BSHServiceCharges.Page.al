@@ -1,18 +1,17 @@
-page 50135 "BSB Hotel Service Lines"
+page 50125 "BSH Service Charges"
 {
+    Caption = 'BSH Service Charges';
     PageType = ListPart;
-    SourceTable = "BSB Hotel Service Line";
-    Caption = 'Hotel Service Lines';
+    SourceTable = "BSH Service Charge";
     ApplicationArea = All;
-    AutoSplitKey = true;
 
     layout
     {
         area(Content)
         {
-            repeater(Lines)
+            repeater(Charges)
             {
-                field("Service Type"; Rec."Service Type")
+                field("Charge Type"; Rec."Charge Type")
                 {
                     ApplicationArea = All;
                 }
@@ -24,11 +23,11 @@ page 50135 "BSB Hotel Service Lines"
                 {
                     ApplicationArea = All;
                 }
-                field(Billable; Rec.Billable)
+                field("Posting Date"; Rec."Posting Date")
                 {
                     ApplicationArea = All;
                 }
-                field(Posted; Rec.Posted)
+                field(Billable; Rec.Billable)
                 {
                     ApplicationArea = All;
                 }

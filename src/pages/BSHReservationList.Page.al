@@ -1,47 +1,43 @@
-page 50136 "BSB Hotel Ledger Entries"
+page 50123 "BSH Reservation List"
 {
+    Caption = 'BSH Reservations';
     PageType = List;
-    SourceTable = "BSB Hotel Ledger Entry";
-    Caption = 'Hotel Ledger Entries';
+    SourceTable = "BSH Reservation";
+    CardPageId = "BSH Reservation Card";
     ApplicationArea = All;
     UsageCategory = Lists;
-    Editable = false;
 
     layout
     {
         area(Content)
         {
-            repeater(Entries)
+            repeater(Reservations)
             {
-                field("Entry No."; Rec."Entry No.")
-                {
-                    ApplicationArea = All;
-                }
                 field("Reservation No."; Rec."Reservation No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Entry Type"; Rec."Entry Type")
+                field("Customer No."; Rec."Customer No.")
                 {
                     ApplicationArea = All;
                 }
-                field(Amount; Rec.Amount)
+                field("Room No."; Rec."Room No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Document No."; Rec."Document No.")
+                field("Check-in Date"; Rec."Check-in Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Posting Date"; Rec."Posting Date")
+                field("Check-out Date"; Rec."Check-out Date")
                 {
                     ApplicationArea = All;
                 }
-                field(Description; Rec.Description)
+                field(Status; Rec.Status)
                 {
                     ApplicationArea = All;
                 }
-                field("User ID"; Rec."User ID")
+                field("Invoice No."; Rec."Invoice No.")
                 {
                     ApplicationArea = All;
                 }

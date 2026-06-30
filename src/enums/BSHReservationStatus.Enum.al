@@ -1,4 +1,4 @@
-enum 50100 "BSB Hotel Res. Status"
+enum 50100 "BSH Reservation Status"
 {
     Extensible = false;
 

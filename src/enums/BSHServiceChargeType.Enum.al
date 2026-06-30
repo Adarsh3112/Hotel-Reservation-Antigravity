@@ -1,4 +1,4 @@
-enum 50101 "BSB Hotel Service Type"
+enum 50101 "BSH Service Charge Type"
 {
     Extensible = true;
 
@@ -13,5 +13,9 @@ enum 50101 "BSB Hotel Service Type"
     value(2; Transfer)
     {
         Caption = 'Transfer';
+    }
+    value(3; Other)
+    {
+        Caption = 'Other';
     }
 }

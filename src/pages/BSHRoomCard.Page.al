@@ -1,10 +1,9 @@
-page 50132 "BSB Hotel Room Card"
+page 50122 "BSH Room Card"
 {
+    Caption = 'BSH Room';
     PageType = Card;
-    SourceTable = "BSB Hotel Room";
-    Caption = 'Hotel Room';
+    SourceTable = "BSH Room";
     ApplicationArea = All;
-    UsageCategory = None;
 
     layout
     {
@@ -25,6 +24,10 @@ page 50132 "BSB Hotel Room Card"
                     ApplicationArea = All;
                 }
                 field(Occupied; Rec.Occupied)
+                {
+                    ApplicationArea = All;
+                }
+                field(Blocked; Rec.Blocked)
                 {
                     ApplicationArea = All;
                 }

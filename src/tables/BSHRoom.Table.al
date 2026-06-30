@@ -1,31 +1,36 @@
-table 50111 "BSB Hotel Room"
+table 50111 "BSH Room"
 {
-    Caption = 'Hotel Room';
+    Caption = 'BSH Room';
     DataClassification = CustomerContent;
-    LookupPageId = "BSB Hotel Room List";
-    DrillDownPageId = "BSB Hotel Room List";
 
     fields
     {
         field(1; "Room No."; Code[20])
         {
             Caption = 'Room No.';
+            DataClassification = CustomerContent;
             NotBlank = true;
         }
-        field(2; "Room Type"; Code[30])
+        field(2; "Room Type"; Text[30])
         {
             Caption = 'Room Type';
+            DataClassification = CustomerContent;
         }
         field(3; "Nightly Rate"; Decimal)
         {
             Caption = 'Nightly Rate';
-            AutoFormatType = 1;
+            DataClassification = CustomerContent;
             MinValue = 0;
         }
         field(4; Occupied; Boolean)
         {
             Caption = 'Occupied';
-            Editable = false;
+            DataClassification = CustomerContent;
+        }
+        field(5; Blocked; Boolean)
+        {
+            Caption = 'Blocked';
+            DataClassification = CustomerContent;
         }
     }
 
