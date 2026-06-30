@@ -1,7 +1,9 @@
-table 50111 "BSH Room"
+table 50100 "Room"
 {
-    Caption = 'BSH Room';
+    Caption = 'Room';
     DataClassification = CustomerContent;
+    LookupPageId = "Room List";
+    DrillDownPageId = "Room List";
 
     fields
     {
@@ -11,7 +13,7 @@ table 50111 "BSH Room"
             DataClassification = CustomerContent;
             NotBlank = true;
         }
-        field(2; "Room Type"; Text[30])
+        field(2; "Room Type"; Enum "Room Type")
         {
             Caption = 'Room Type';
             DataClassification = CustomerContent;
@@ -21,15 +23,11 @@ table 50111 "BSH Room"
             Caption = 'Nightly Rate';
             DataClassification = CustomerContent;
             MinValue = 0;
+            AutoFormatType = 1;
         }
-        field(4; Occupied; Boolean)
+        field(4; "Occupied"; Boolean)
         {
             Caption = 'Occupied';
-            DataClassification = CustomerContent;
-        }
-        field(5; Blocked; Boolean)
-        {
-            Caption = 'Blocked';
             DataClassification = CustomerContent;
         }
     }
@@ -41,4 +39,22 @@ table 50111 "BSH Room"
             Clustered = true;
         }
     }
+
+    fieldgroups
+    {
+        fieldgroup(DropDown; "Room No.", "Room Type", "Nightly Rate") { }
+        fieldgroup(Brick; "Room No.", "Room Type", "Nightly Rate") { }
+    }
+
+    trigger OnDelete()
+    begin
+        if Rec.Occupied then
+            Error('You cannot delete an occupied room.');
+    end;
+
+    trigger OnRename()
+    begin
+        if xRec.Occupied then
+            Error('You cannot rename an occupied room.');
+    end;
 }
